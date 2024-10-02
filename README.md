@@ -16,8 +16,8 @@ Pour configurer le projet, suivez ces étapes :
 1. Cloner le dépôt :
 
 ```bash
-   git clone https://github.com/FatimataAliouSall/gestion-recette-api-express.git
-   cd gestion-recette-api-express
+   git clone https://github.com/FatimataAliouSall/backend-gestion-recette-api.git
+   cd backend-gestion-recette-api
 ```
 
 2. Installer les dépendances :
@@ -38,10 +38,10 @@ Pour configurer le projet, suivez ces étapes :
     DB_HOST=localhost
     DB_USER=
     DB_PASSWORD=
-    DB_NAME=recipes_management_old
+    DB_NAME=gestion_recettes
     PORT=3090
     DB_PORT=3306
-    MYSQL_DATABASE=recipes_management_old
+    MYSQL_DATABASE=gestion_recettes
     MYSQL_ROOT_PASSWORD=
 ```
 
@@ -61,8 +61,7 @@ L'API sera accessible à l'adresse http://localhost:3090
         "id": 1,
         "title": "Salade ",
         "ingredient": "Laitue, Poulet, Parmesan, Croutons, Sauce César",
-        "type": "entrée",
-        "description": "Une salade légère et rafraîchissante avec du poulet grillé, du parmesan et des croûtons croustillants, servie avec une sauce César classique."
+        "type": "entrée"
 
   }
 ```
@@ -78,8 +77,7 @@ L'API sera accessible à l'adresse http://localhost:3090
   {
    "title": "Salade  datte",
   "ingredient": "Lait, Poulet, Parmesan, Croutons, Sucre",
-  "type": "dessert",
-  "description": "Une salade populaire à base de poulet, parmesan, et sauce crémeuse."
+  "type": "dessert"
 
 }
 ```
@@ -104,8 +102,7 @@ L'API sera accessible à l'adresse http://localhost:3090
 {
         "title": "Salade ",
         "ingredient": "Laitue, Poulet, Parmesan, Croutons, Sauce César",
-        "type": "entrée",
-        "description": "Une salade légère et rafraîchissante avec du poulet grillé, du parmesan et des croûtons croustillants, servie avec une sauce César classique."
+        "type": "entrée"
  }
 
 ```
