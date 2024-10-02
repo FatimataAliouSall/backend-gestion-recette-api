@@ -182,4 +182,4 @@ npm run format
 ## Auteurs
 
 - **[Fatimata Aliou Sall](https://github.com/fatimata-sall)** - Développeuse Full Stack
-- **[Mohamed Soumare](https://github.com/MohamedSoumare)** - Développeur Full Stack
+
