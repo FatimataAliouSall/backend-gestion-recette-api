@@ -22,9 +22,9 @@ const RecipeController = {
   },
 
   async addRecipe(req, res) {
-    const { title, type, ingredient, description } = req.body;
+    const { title, type, ingredient } = req.body;
     try {
-      await Recipe.create(title, type, description, ingredient);
+      await Recipe.create(title, type, ingredient);
       res.status(200).json({ message: 'Recette créée avec succès' });
     } catch (error) {
       console.error('Erreur dans addRecipe:', error);

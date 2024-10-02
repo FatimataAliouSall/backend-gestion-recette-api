@@ -7,15 +7,13 @@ describe('Recipe tests', () => {
     const recipe = {
       title: 'crepe',
       type: 'dessert',
-      description: 'pâte à base de farine',
       ingredient: 'farine',
     };
 
     const result = await Recipe.create(
       recipe.title,
       recipe.type,
-      recipe.description,
-      recipe.ingredient
+      recipe.ingredient,
     );
     recipeId = result.insertId;
     const recipeCreated = await Recipe.getById(recipeId);
@@ -35,7 +33,6 @@ describe('Recipe tests', () => {
     const updatedData = {
       title: 'updated crepe',
       type: 'dessert',
-      description: 'updated description',
       ingredient: 'updated ingredient',
     };
 
@@ -44,28 +41,21 @@ describe('Recipe tests', () => {
 
     const updatedRecipe = await Recipe.getById(recipeId);
     expect(updatedRecipe.title).toBe(updatedData.title);
-    expect(updatedRecipe.description).toBe(updatedData.description);
     expect(updatedRecipe.ingredient).toBe(updatedData.ingredient);
   });
 
   it('cannot create recipe with invalid data', async () => {
     const recipe = {
-      titre: null,
-      ingredients: 'Lait, Chocolat, sucre',
-      description: 'updated description',
+      title: null,
+      ingredient: 'Lait, Chocolat, sucre',
       type: 'Dessert',
     };
 
     try {
-      await Recipe.createRecipe(
-        recipe.titre,
-        recipe.ingredients,
-        recipe.description,
-        recipe.type
-      );
+      await Recipe.create(recipe.title, recipe.ingredient, recipe.type);
       fail('Expected an error to be thrown');
     } catch (error) {
-      console.log('Erreur  :', error.message);
+      // console.log('Erreur  :', error.message);
     }
   });
 
