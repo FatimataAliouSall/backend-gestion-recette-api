@@ -14,7 +14,7 @@ const Recipe = {
   checkRecipe: async (title) => {
     const [rows] = await db.query(
       'SELECT COUNT(*) as count FROM recipes WHERE title = ?',
-      [title],
+      [title]
     );
     return rows[0].count > 0;
   },

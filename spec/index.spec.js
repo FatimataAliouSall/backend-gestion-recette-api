@@ -13,7 +13,7 @@ describe('Recipe tests', () => {
     const result = await Recipe.create(
       recipe.title,
       recipe.type,
-      recipe.ingredient,
+      recipe.ingredient
     );
     recipeId = result.insertId;
     const recipeCreated = await Recipe.getById(recipeId);

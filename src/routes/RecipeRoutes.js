@@ -14,18 +14,18 @@ router.get('/recipes', RecipeController.getAllRecipes);
 router.get(
   '/recipes/:id',
   getByIdRequestValidator,
-  RecipeController.getRecipeById,
+  RecipeController.getRecipeById
 );
 router.post('/recipes/add', addRequestValidator, RecipeController.addRecipe);
 router.put(
   '/recipes/edit/:id',
   updateRequestValidator,
-  RecipeController.updateRecipe,
+  RecipeController.updateRecipe
 );
 router.delete(
   '/recipes/delete/:id',
   deleteRequestValidator,
-  RecipeController.deleteRecipe,
+  RecipeController.deleteRecipe
 );
 
 export default router;

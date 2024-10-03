@@ -20,7 +20,7 @@ const addRequestValidator = [
     .bail()
     .isLength({ min: 5, max: 100 })
     .withMessage(
-      'Le titre doit comporter au moins 5 ou au plus 100 caractères.',
+      'Le titre doit comporter au moins 5 ou au plus 100 caractères.'
     )
     .bail()
     .custom(async (value) => {
@@ -35,7 +35,7 @@ const addRequestValidator = [
     .not()
     .isEmpty()
     .withMessage(
-      'Le type de recette est obligatoire. Il doit être : entrée, plat, dessert.',
+      'Le type de recette est obligatoire. Il doit être : entrée, plat, dessert.'
     ),
   check('ingredient')
     .optional()
@@ -43,7 +43,7 @@ const addRequestValidator = [
     .isEmpty()
     .isLength({ min: 10, max: 500 })
     .withMessage(
-      'Les ingrédients doivent comporter au moins 10 ou au plus 500 caractères.',
+      'Les ingrédients doivent comporter au moins 10 ou au plus 500 caractères.'
     ),
   handleValidationErrors,
 ];
@@ -68,12 +68,12 @@ const updateRequestValidator = [
   param('id')
     .not()
     .isEmpty()
-    .withMessage('L\'ID de la recette est requis.')
+    .withMessage('LID de la recette est requis.')
     .bail()
     .custom(async (value) => {
       const recipe = await Recipe.getById(value);
       if (!recipe) {
-        throw new Error('Cette recette n\'existe pas.');
+        throw new Error('Cette recette nexiste pas.');
       }
       return true;
     }),
@@ -81,7 +81,7 @@ const updateRequestValidator = [
     .optional()
     .isLength({ min: 5, max: 100 })
     .withMessage(
-      'Le titre doit comporter au moins 5 ou au plus 100 caractères.',
+      'Le titre doit comporter au moins 5 ou au plus 100 caractères.'
     ),
   check('type')
     .optional()
@@ -94,7 +94,7 @@ const updateRequestValidator = [
     .isEmpty()
     .isLength({ min: 10, max: 500 })
     .withMessage(
-      'Les ingrédients doivent comporter au moins 10 ou au plus 500 caractères.',
+      'Les ingrédients doivent comporter au moins 10 ou au plus 500 caractères.'
     ),
   handleValidationErrors,
 ];
@@ -103,12 +103,12 @@ const getByIdRequestValidator = [
   param('id')
     .not()
     .isEmpty()
-    .withMessage('L\'ID de la recette est requis.')
+    .withMessage('LID de la recette est requis.')
     .bail()
     .custom(async (value) => {
       const recipe = await Recipe.getById(value);
       if (!recipe) {
-        throw new Error('Cette recette n\'existe pas.');
+        throw new Error('Cette recette nexiste pas.');
       }
       return true;
     }),
